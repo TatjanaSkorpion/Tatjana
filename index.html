@@ -1,1 +1,25 @@
 
+<!DOCTYPE html>
+<html>
+   <body>
+   <h1>Web Bluetooth API access example</h1>
+   <p>Scann for Estimote Proximity Beacons</p>
+     
+   <!-- JavaScript accessing Bluetooth -->
+     
+   <script>
+     
+      <!-- Ask user for the permission for the Bluetooth access -->
+     
+      navigator.bluetooth.requestDevice({filters: [{name: "Unique Name"}] });
+      .then(device => { 
+         log('> Name:             ' + device.name);
+         log('> Id:               ' + device.id);
+         log('> Connected:        ' + device.gatt.connected);
+      }) 
+      .catch(error => { console.log(error); });
+     
+   </script>
+     
+   </body>
+</html>
