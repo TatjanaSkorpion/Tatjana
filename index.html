@@ -16,15 +16,15 @@
          log('> Name:             ' + device.name);
          log('> Id:               ' + device.id);
          log('> Connected:        ' + device.gatt.connected);
+         document.getElementById("demo").innerHTML = device.name;
       }) 
       .catch(error => { console.log(error); });
      
-   </script>
-      
+   </script>      
       
    <p id="demo">JavaScript can change HTML content.</p>
    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Button</button>
-      
+   <br>   
    <button type="button" onclick="onButtonClick()">Button</button>
       
    <script>   
