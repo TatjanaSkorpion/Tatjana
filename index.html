@@ -28,6 +28,7 @@
    </script>      
       
    <p id="selector">Try querySelector</p>
+   <p id="dev-name">Device Name:</p>
       
    <button type="button" onclick="onButtonClick()">Button</button>
       
@@ -69,11 +70,11 @@
             log('> Name:             ' + device.name);
             log('> Id:               ' + device.id);
             log('> Connected:        ' + device.gatt.connected);
+            document.getElementById("dev-name").innerHTML = device.name;
          })
          .catch(error => {
             log('Argh! ' + error);
-         });
-         document.getElementById("selector").innerHTML = "Query Selector End";
+         });         
       }     
    </script>   
      
