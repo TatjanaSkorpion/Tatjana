@@ -18,15 +18,16 @@
          log('> Id:               ' + device.id);
          log('> Connected:        ' + device.gatt.connected);
          
-         document.getElementById("demo-3").innerHTML = device.name;
+         document.getElementById("demo-1").innerHTML = "RequestDevice";
       }) 
       .catch(error => { console.log(error); });
      
    </script>      
       
-   <p id="demo-2">JavaScript2 can change HTML content.</p>
-   <button type="button" onclick='document.getElementById("demo-2").innerHTML = "Hello JavaScript!"'>Button</button>
-   <br><br>   
+   <p id="demo-2">Button changes HTML content.</p>
+   <button type="button" onclick='document.getElementById("demo-2").innerHTML = "Changed"'>Button</button>
+   <br><br>
+      
    <button type="button" onclick="onButtonClick()">Button</button>
       
    <script>   
