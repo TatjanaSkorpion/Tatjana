@@ -6,7 +6,8 @@
    <p>Scann for Estimote Proximity Beacons</p>
      
    <!-- JavaScript accessing Bluetooth -->
-     
+   
+   <p id="demo-1">JavaScript-1</p>   
    <script>
      
       <!-- Ask user for the permission for the Bluetooth access -->
@@ -16,15 +17,16 @@
          log('> Name:             ' + device.name);
          log('> Id:               ' + device.id);
          log('> Connected:        ' + device.gatt.connected);
-         document.getElementById("demo").innerHTML = device.name;
+         
+         document.getElementById("demo-1").innerHTML = device.name;
       }) 
       .catch(error => { console.log(error); });
      
    </script>      
       
-   <p id="demo">JavaScript can change HTML content.</p>
-   <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Button</button>
-   <br>   
+   <p id="demo-2">JavaScript2 can change HTML content.</p>
+   <button type="button" onclick='document.getElementById("demo-2").innerHTML = "Hello JavaScript!"'>Button</button>
+   <br><br>   
    <button type="button" onclick="onButtonClick()">Button</button>
       
    <script>   
