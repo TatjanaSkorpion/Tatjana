@@ -3,7 +3,7 @@
 <html>
    <body>
    <h1>Web Bluetooth API access example</h1>
-   <p>Scann for Estimote Proximity Beacons</p>
+   <p>Scann for Estimote Proximity Beacons 1</p>
      
    <!-- JavaScript accessing Bluetooth -->
    
@@ -14,7 +14,7 @@
      
       <!-- Ask user for the permission for the Bluetooth access -->
      
-      navigator.bluetooth.requestDevice({filters: [{name: "EST"}] });
+      navigator.bluetooth.requestDevice({filters: [{name: "mint"}] });
       .then(device => { 
          log('> Name:             ' + device.name);
          log('> Id:               ' + device.id);
