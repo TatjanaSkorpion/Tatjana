@@ -14,7 +14,7 @@
      
       <!-- Ask user for the permission for the Bluetooth access -->
      
-      navigator.bluetooth.requestDevice({filters: [{name: "Unique Name"}] });
+      navigator.bluetooth.requestDevice({filters: [{name: "EST"}] });
       .then(device => { 
          log('> Name:             ' + device.name);
          log('> Id:               ' + device.id);
