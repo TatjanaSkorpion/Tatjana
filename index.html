@@ -12,18 +12,20 @@
       
    <script>
      
-      <!-- Ask user for the permission for the Bluetooth access -->
-     
-      navigator.bluetooth.requestDevice({filters: [{name: "fff92a043997"}] });
-      .then(device => { 
-         log('> Name:             ' + device.name);
-         log('> Id:               ' + device.id);
-         log('> Connected:        ' + device.gatt.connected);
+      <!-- Ask user for the permission for the Bluetooth access -->      
+      button.addEventListener('pointerup', function(event) {
          
-         document.getElementById("name").innerHTML = device.name;
-         document.getElementById("id").innerHTML = device.id;
-      }) 
-      .catch(error => { console.log(error); });
+         <!-- Request Bluetooth device -->     
+         navigator.bluetooth.requestDevice({filters: [{name: "fff92a043997"}] });
+         .then(device => { 
+            log('> Name:             ' + device.name);
+            log('> Id:               ' + device.id);
+            log('> Connected:        ' + device.gatt.connected);
+            document.getElementById("name").innerHTML = device.name;
+            document.getElementById("id").innerHTML = device.id;
+         }) 
+         .catch(error => { console.log(error); });        
+      });    
      
    </script>      
       
