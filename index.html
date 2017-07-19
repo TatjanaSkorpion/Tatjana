@@ -7,7 +7,7 @@
      
    <!-- JavaScript accessing Bluetooth -->
    
-   <p>Search for name:</p>
+   <p>Search for Beacon by name</p>
    <p id="name">Result name</p>
    <p id="id">Result id:</p>   
       
@@ -16,7 +16,7 @@
       <!-- Ask user for the permission for the Bluetooth access -->      
       button.addEventListener('pointerup', function(event) {
          
-         <!-- Request Bluetooth device -->     
+         <!-- Request Beacon by name -->     
          navigator.bluetooth.requestDevice({ filters: [{name: "blue-beacon"}] });
          .then(device => { 
             log('> Name:             ' + device.name);
@@ -30,12 +30,12 @@
      
    </script>      
 
-   <p >Search using UUID:</p>
+   <p >Search Beacon by UUID</p>
    <p id="search-uuid">Result name</p>
       
    <script>
      
-      <!-- Request Bluetooth device -->     
+      <!-- Request Beacon by UUID -->     
       navigator.bluetooth.requestDevice({ filters: [{services: ['B9407F30-F5F8-466E-AFF9-025556B57001'] }] });
       .then(device => { 
          log('> Name:             ' + device.name);
@@ -47,16 +47,16 @@
      
    </script>  
       
-   <p id="selector">Try querySelector</p>
-   <p id="dev-name">Device Name:</p>
+   <p>Search for Beacon using querySelector</p>
+   <p id="search-selectore">Device Name:</p>
       
-   <button type="button" onclick="onButtonClick()">Button</button>
+   <button type="button" onclick="onButtonClick()">Search for Beacon using QuerySelector</button>
       
    <script>   
       function onButtonClick() {
          let filters = [];
          
-         document.getElementById("selector").innerHTML = "Query Selector Begin";
+         document.getElementById("search-selector").innerHTML = "Query Selector Begin";
 
          let filterService = document.querySelector('#service').value;
          if (filterService.startsWith('0x')) {
