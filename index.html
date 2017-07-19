@@ -18,15 +18,15 @@
          
             <!-- Request Beacon by name -->     
          
-            navigator.bluetooth.requestDevice({ filters: [{name: "blue-beacon"}] });
+            navigator.bluetooth.requestDevice({ filters: [{ name: "blue-beacon" }] })
             .then(device => { 
                log('> Name:             ' + device.name);
                log('> Id:               ' + device.id);
                log('> Connected:        ' + device.gatt.connected);
                document.getElementById("SearchByName").innerHTML = device.name;
             }) 
-            .catch(error => { console.log(error); });        
-         });
+            .catch(error => { console.log(error); });            
+         }
       }
    </script>
 
@@ -36,14 +36,16 @@
       
    <script>
       function onButtonClickByUUID() {
-         <!-- Request Beacon by UUID -->     
-         navigator.bluetooth.requestDevice({ filters: [{services: ['b9407f30-f5f8-466e-aff9-025556b57001'] }] });                                                                      
+         
+         <!-- Request Beacon by UUID -->
+         
+         navigator.bluetooth.requestDevice({ filters: [{services: ['b9407f30-f5f8-466e-aff9-025556b57001'] }] })
          .then(device => { 
             log('> Name:             ' + device.name);
             log('> Id:               ' + device.id);
             log('> Connected:        ' + device.gatt.connected);
             document.getElementById("SearchByUuid").innerHTML = device.name;
-         }); 
+         }) 
          .catch(error => { console.log(error); });
       }     
    </script>
@@ -92,10 +94,8 @@
             log('> Connected:        ' + device.gatt.connected);
             document.getElementById("SearchBySelector").innerHTML = device.name;
          })
-         .catch(error => {
-            log('Argh! ' + error);
-         });         
-      }     
+         .catch(error => { log('Argh! ' + error); });         
+      }
    </script>   
       
    <p id="SearchBySelector">Result of the search by query selector</p>
