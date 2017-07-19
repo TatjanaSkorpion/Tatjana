@@ -3,34 +3,39 @@
 <html>
    <body>
    <h1>Web Bluetooth API access example</h1>
-   <p>Scann for Estimote Proximity Beacons 2</p>
+   <p>Scann for Estimote Proximity Beacons</p>
      
    <!-- JavaScript accessing Bluetooth -->
    
-   <p>Search for Beacon by name</p>
-   <p id="SearyByName">Result name</p>
+   <button type="button" onclick="onButtonClickByName()">Search for Beacon by name</button>
+     
+   <script>
+      function onButtonClickByName() {
+         
+         <!-- Ask user for the permission for the Bluetooth access -->      
       
-   <script>     
-      <!-- Ask user for the permission for the Bluetooth access -->      
-      button.addEventListener('pointerup', function(event) {         
-         <!-- Request Beacon by name -->     
-         navigator.bluetooth.requestDevice({ filters: [{name: "blue-beacon"}] });
-         .then(device => { 
-            log('> Name:             ' + device.name);
-            log('> Id:               ' + device.id);
-            log('> Connected:        ' + device.gatt.connected);
-            document.getElementById("SearchByName").innerHTML = device.name;
-         }) 
-         .catch(error => { console.log(error); });        
-      });     
-   </script>      
+         button.addEventListener('pointerup', function(event) {
+         
+            <!-- Request Beacon by name -->     
+         
+            navigator.bluetooth.requestDevice({ filters: [{name: "blue-beacon"}] });
+            .then(device => { 
+               log('> Name:             ' + device.name);
+               log('> Id:               ' + device.id);
+               log('> Connected:        ' + device.gatt.connected);
+               document.getElementById("SearchByName").innerHTML = device.name;
+            }) 
+            .catch(error => { console.log(error); });        
+         });
+      }
+   </script>
 
-   <p >Search Beacon by UUID</p>
-   <p id="SearchByUuid">Result name</p>
-   <button type="button" onclick="onButtonClick()">Search for Beacon by UUID</button>
+   <p id="SearyByName">Result by name</p>
+
+   <button type="button" onclick="onButtonClickByUUID()">Search for Beacon by UUID</button>
       
    <script>
-      function onButtonClick() {
+      function onButtonClickByUUID() {
          <!-- Request Beacon by UUID -->     
          navigator.bluetooth.requestDevice({ filters: [{services: ['B9407F30-F5F8-466E-AFF9-025556B57001'] }] });
          .then(device => { 
@@ -41,11 +46,10 @@
          }); 
          .catch(error => { console.log(error); });
       }     
-   </script>  
+   </script>
       
-   <p>Search for Beacon using querySelector</p>
-   <p id="SearchBySelector">Result name</p>
-      
+   <p id="SearchByUuid">Result by UUID</p>      
+         
    <button type="button" onclick="onButtonClick()">Search for Beacon using QuerySelector</button>
       
    <script>   
@@ -93,6 +97,8 @@
          });         
       }     
    </script>   
+      
+   <p id="SearchBySelector">Result by query selector</p>
      
    </body>
 </html>
