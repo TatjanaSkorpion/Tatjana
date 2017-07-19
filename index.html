@@ -14,7 +14,7 @@
      
          <!-- Request Beacon by name -->     
         
-         navigator.bluetooth.requestDevice({ filters: [{ name: "blue-beacon" }] })
+         navigator.bluetooth.requestDevice({ filters: [{ name: "ice-beacon" }] })
          .then(device => { 
             log('> Name:             ' + device.name);
             log('> Id:               ' + device.id);
@@ -37,7 +37,7 @@
          
          <!-- Request Beacon by UUID -->
          
-         navigator.bluetooth.requestDevice({ filters: [{services: ['b9407f30-f5f8-466e-aff9-025556b57001'] }] })
+         navigator.bluetooth.requestDevice({ filters: [{services: ['b9407f30-f5f8-466e-aff9-025556b57002'] }] })
          .then(device => { 
             log('> Name:             ' + device.name);
             log('> Id:               ' + device.id);
