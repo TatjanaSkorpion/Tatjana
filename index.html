@@ -16,7 +16,7 @@
       button.addEventListener('pointerup', function(event) {
          
          <!-- Request Bluetooth device -->     
-         navigator.bluetooth.requestDevice({filters: [{name: "blue-beacon"}] });
+         navigator.bluetooth.requestDevice({ filters: [{name: "blue-beacon"}] });
          .then(device => { 
             log('> Name:             ' + device.name);
             log('> Id:               ' + device.id);
@@ -28,6 +28,25 @@
       });    
      
    </script>      
+
+   <p >Search using UUID:</p>
+   <p id="search-uuid">Result</p>
+      
+   <script>
+     
+      <!-- Request Bluetooth device -->     
+      navigator.bluetooth.requestDevice({
+         filters: [{services: [0x1234, 0x12345678, 'B9407F30-F5F8-466E-AFF9-025556B57001'] }] });                                                    
+         .then(device => { 
+            log('> Name:             ' + device.name);
+            log('> Id:               ' + device.id);
+            log('> Connected:        ' + device.gatt.connected);
+            document.getElementById("search-uuid").innerHTML = device.name;
+         }) 
+         .catch(error => { console.log(error); });        
+      });    
+     
+   </script>  
       
    <p id="selector">Try querySelector</p>
    <p id="dev-name">Device Name:</p>
