@@ -25,7 +25,10 @@
                log('> Connected:        ' + device.gatt.connected);
                document.getElementById("SearchByName").innerHTML = device.name;
             }) 
-            .catch(error => { console.log(error); });            
+            .catch(error => { 
+               console.log(error);
+               document.getElementById("SearchByName").innerHTML = error;
+            });
          }
       }
    </script>
