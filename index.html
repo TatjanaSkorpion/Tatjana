@@ -16,7 +16,7 @@
       button.addEventListener('pointerup', function(event) {
          
          <!-- Request Bluetooth device -->     
-         navigator.bluetooth.requestDevice({filters: [{name: "fff92a043997"}] });
+         navigator.bluetooth.requestDevice({filters: [{name: "blue-beacon"}] });
          .then(device => { 
             log('> Name:             ' + device.name);
             log('> Id:               ' + device.id);
