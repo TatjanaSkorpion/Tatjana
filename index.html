@@ -67,16 +67,19 @@
          }
          if (filterService) {
             filters.push({services: [filterService]});
+            document.getElementById("filterService").innerHTML = filterService;
          }
 
          let filterName = document.querySelector('#name').value;
          if (filterName) {
             filters.push({name: filterName});
+            document.getElementById("filterName").innerHTML = filterName;
          }
 
          let filterNamePrefix = document.querySelector('#namePrefix').value;
          if (filterNamePrefix) {
             filters.push({namePrefix: filterNamePrefix});
+            document.getElementById("filterNamePrefix").innerHTML = filterNamePrefix;
          }
 
          let options = {};
@@ -102,6 +105,9 @@
       }
    </script>   
       
+   <p id="filterService">filterService</p>      
+   <p id="filterName">filterName</p>      
+   <p id="filterNamePrefix">filterNamePrefix</p>     
    <p id="SearchBySelector">Result of the search by query selector</p>
      
    </body>
