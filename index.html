@@ -36,8 +36,7 @@
    <script>
      
       <!-- Request Bluetooth device -->     
-      navigator.bluetooth.requestDevice({
-         filters: [{services: ['B9407F30-F5F8-466E-AFF9-025556B57001'] }] });                                                    
+      navigator.bluetooth.requestDevice({ filters: [{services: ['B9407F30-F5F8-466E-AFF9-025556B57001'] }] });
       .then(device => { 
          log('> Name:             ' + device.name);
          log('> Id:               ' + device.id);
