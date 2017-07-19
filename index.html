@@ -7,8 +7,9 @@
      
    <!-- JavaScript accessing Bluetooth -->
    
-   <p id="name">Name:</p>
-   <p id="id">ID:</p>   
+   <p>Search for name:</p>
+   <p id="name">Result name</p>
+   <p id="id">Result id:</p>   
       
    <script>
      
@@ -30,21 +31,20 @@
    </script>      
 
    <p >Search using UUID:</p>
-   <p id="search-uuid">Result</p>
+   <p id="search-uuid">Result name</p>
       
    <script>
      
       <!-- Request Bluetooth device -->     
       navigator.bluetooth.requestDevice({
-         filters: [{services: [0x1234, 0x12345678, 'B9407F30-F5F8-466E-AFF9-025556B57001'] }] });                                                    
-         .then(device => { 
-            log('> Name:             ' + device.name);
-            log('> Id:               ' + device.id);
-            log('> Connected:        ' + device.gatt.connected);
-            document.getElementById("search-uuid").innerHTML = device.name;
-         }) 
-         .catch(error => { console.log(error); });        
-      });    
+         filters: [{services: ['B9407F30-F5F8-466E-AFF9-025556B57001'] }] });                                                    
+      .then(device => { 
+         log('> Name:             ' + device.name);
+         log('> Id:               ' + device.id);
+         log('> Connected:        ' + device.gatt.connected);
+         document.getElementById("search-uuid").innerHTML = device.name;
+      }) 
+      .catch(error => { console.log(error); });        
      
    </script>  
       
