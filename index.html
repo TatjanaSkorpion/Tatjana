@@ -30,7 +30,7 @@
       }
    </script>
 
-   <p id="SearyByName">Result by name</p>
+   <p id="SearyByName">Result of the search by name</p>
 
    <button type="button" onclick="onButtonClickByUUID()">Search for Beacon by UUID</button>
       
@@ -48,7 +48,7 @@
       }     
    </script>
       
-   <p id="SearchByUuid">Result by UUID</p>      
+   <p id="SearchByUuid">Result of the search by UUID</p>      
          
    <button type="button" onclick="onButtonClick()">Search for Beacon using QuerySelector</button>
       
@@ -90,7 +90,7 @@
             log('> Name:             ' + device.name);
             log('> Id:               ' + device.id);
             log('> Connected:        ' + device.gatt.connected);
-            document.getElementById("SearchBySelecto").innerHTML = device.name;
+            document.getElementById("SearchBySelector").innerHTML = device.name;
          })
          .catch(error => {
             log('Argh! ' + error);
@@ -98,7 +98,7 @@
       }     
    </script>   
       
-   <p id="SearchBySelector">Result by query selector</p>
+   <p id="SearchBySelector">Result of the search by query selector</p>
      
    </body>
 </html>
