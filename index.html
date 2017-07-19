@@ -66,21 +66,21 @@
             filterService = parseInt(filterService);
          }
          if (filterService) {
-            filters.push({services: [filterService]});
-            document.getElementById("filterService").innerHTML = filterService;
+            filters.push({services: [filterService]});            
          }
+         document.getElementById("filterService").innerHTML = filterService;
 
          let filterName = document.querySelector('#name').value;
          if (filterName) {
-            filters.push({name: filterName});
-            document.getElementById("filterName").innerHTML = filterName;
+            filters.push({name: filterName});            
          }
+         document.getElementById("filterName").innerHTML = filterName;
 
          let filterNamePrefix = document.querySelector('#namePrefix').value;
          if (filterNamePrefix) {
-            filters.push({namePrefix: filterNamePrefix});
-            document.getElementById("filterNamePrefix").innerHTML = filterNamePrefix;
+            filters.push({namePrefix: filterNamePrefix});            
          }
+         document.getElementById("filterNamePrefix").innerHTML = filterNamePrefix;
 
          let options = {};
          if (document.querySelector('#allDevices').checked) {
