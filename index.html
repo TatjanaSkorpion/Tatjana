@@ -100,7 +100,10 @@
             log('> Connected:        ' + device.gatt.connected);
             document.getElementById("SearchBySelector").innerHTML = device.name;
          })
-         .catch(error => { log('Argh! ' + error); });         
+         .catch(error => { 
+            log(error);
+            document.getElementById("SearchBySelector").innerHTML = error;
+         });
       }
    </script>   
       
